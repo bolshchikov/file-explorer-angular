@@ -1,0 +1,23 @@
+<table class="table table-stripped">
+	<thead>
+		<tr>
+			<th>UID</th>
+			<th>Type</th>
+			<th>Name</th>
+			<th>Size</th>
+			<th>Owner</th>
+			<th>Creation Time</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="element in elements | filter: query">
+			<td>{{element.uid}}</td>
+			<td><img alt="{{element.type}}" ng-src="img/{{element.type}}.png" class="thumb"/></td>
+			<td><a ng-click="showDetails(element.name)">{{element.name}}</a></td>
+			<td>{{element.size}}</td>
+			<td>{{element.owner}}</td>
+			<td>{{element.ctime}}</td>
+		</tr>
+	</tbody>
+</table>
+<div id="modal-wrapper" ng-include src="'partials/details.html'"></div>

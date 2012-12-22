@@ -1,0 +1,10 @@
+<ul>
+	<li ng-repeat="folder in folders">
+		<a href="#/folder/{{folder.name}}">{{folder.name}}</a>
+		<ul>
+			<li ng-repeat="el in folder.elements">
+				<a href="#/folder/{{el.name}}">{{el.name}}</a>
+			</li>
+		</ul>
+	</li>
+</ul>

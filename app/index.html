@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+	<head>
+		<meta charset="utf-8">
+		<title>My AngularJS App</title>
+		<link rel="stylesheet" href="css/app.css"/>
+		<link rel="stylesheet" href="css/bootstrap.css"/>
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</a>
+						<a class="brand" href="#">Explorer-Test-App-Backbone</a>
+						<div class="nav-collapse">
+							<ul class="nav">
+								<li><a href="#">File</a></li>
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">View</a></li>
+								<li><a href="mailto:sergey@bolshchikov.net" target="_blank">Contact</a></li>
+							</ul>
+						</div>
+						<form class="navbar-search pull-right">
+							<input type="text" class="search-query" placeholder="Search" ng-model="query"></input>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row-fluid" ng-controller="TreeCtrl">
+				<div id="tree" class="span3 well">
+					<h6>Tree</h6>
+					<ul>
+						<li><a href="#/folder/bolshchikov">bolshchikov</a>
+							<ng-include src ="'partials/tree.html'"></ng-include>
+						</li>
+					</ul>
+				</div>
+				<div class="span9">
+					<div id="toolbar" class="well">
+						<h6>Toolbar</h6><br/>
+						<ul>
+							<li><a href="#" ref="tooltip" title="Back"><img src="img/icons/glyphicons_216_circle_arrow_left.png" /></a></li>
+							<li><a href="#" ref="tooltip" title="Up"><img src="img/icons/glyphicons_218_circle_arrow_top.png" /></a></li>
+							<li><a href="#" ref="tooltip" title="Forward"><img src="img/icons/glyphicons_217_circle_arrow_right.png" /></a></li>
+							<li><a href="#" ref="tooltip" title="New"><img src="img/icons/glyphicons_036_file.png" /></a></li>
+							<li><a href="#" ref="tooltip" title="Open"><img src="img/icons/glyphicons_144_folder_open.png" /></a></li>
+							<li><a href="#" ref="tooltip" title="Add Folder"><img src="img/icons/glyphicons_145_folder_plus.png" /></a></li>
+							<li><a href="#" ref="tooltip" title="Print"><img src="img/icons/glyphicons_015_print.png" /></a></li>
+							<li><a href="#" ref="tooltip" title="Bold"><img src="img/icons/glyphicons_102_bold.png" /></a></li>
+							<li><a href="#" ref="tooltip" title="Italic"><img src="img/icons/glyphicons_101_italic.png" /></a></li>
+							<li><a href="#" ref="tooltip" title="Settings"><img src="img/icons/glyphicons_019_cogwheel.png" /></a></li>
+						</ul>
+					</div>
+					<div id="content" class="well">
+						<h6>Content</h6>
+						<div ng-view></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<hr />
+
+		<div class="footer">
+			<p>
+				Online Folder Explorer: online test application based on <a href="//angularjs.org" target="_blank">Angular JS Framework</a><br />
+				&copy; <a href="//new-proimage.com" target="_blank">New ProImage</a><br/>
+				Author: Sergey N. Bolshchikov, 2012 <br />
+				The code is licensed under <a href="//www.gnu.org/licenses/gpl-2.0.html" target="_blank">GNU General Public License, v2</a><br />
+				Version 0.0.1 dev<br />
+			</p>
+		</div>
+		
+
+		<script src="lib/jquery/jquery.js"></script>
+		<script src="lib/bootstrap/bootstrap.js"></script>
+		<script src="lib/angular/angular.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/services.js"></script>
+		<script src="js/controllers.js"></script>
+		<script src="js/filters.js"></script>
+		<script src="js/directives.js"></script>
+	</body>
+</html>
